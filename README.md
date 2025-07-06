@@ -1,8 +1,44 @@
 # CL-BACK
 
-Back Medusa pour le site web de CheersLocation.
-
+**Ce dépot contient le code du serveur Back Medusa pour le site web de CheersLocation.**
 ---
+# Installation
+## Prérequis
+- Node.js >= 20.x+
+- PostgreSQL >= 12.x+
+- Redis >= 6.x
+### Configuration de la base de données
+1. Créer une base de données **PostgreSQL** pour Medusa.
+2. **noter les valeurs de connexion** (host, port, username, password, database name) pour la configuration ultérieure.
+3. Créer un utilisateur PostgreSQL avec les droits nécessaires pour accéder à la base de données
+## Environnement de développement
+### Clone du dépot
+Aller dans le répertoire de votre choix et cloner le dépôt Git du projet :
+```bash
+git clone https://github.com/cheerslocation/CL-BACK.git
+```
+### Installation des dépendances
+Se rendre dans le répertoire du projet cloné et installer les dépendances :
+```bash
+cd CL-BACK
+npm install
+```
+
+### Configuration de l'environnement
+Créer un fichier `.env` à la racine du projet et y ajouter les variables d'environnement nécessaires. Voici un exemple de configuration :
+```env
+DATABASE_URL=postgres://username:password@localhost:5432/medusa_db
+REDIS_URL=redis://localhost:6379
+MEDUSA_ADMIN_CORS_ORIGIN=http://localhost:3000
+MEDUSA_BACKEND_CORS_ORIGIN=http://localhost:3000
+```
+Remplacez `username`, `password`, `localhost`, `5432` et `medusa_db` par les valeurs appropriées pour votre configuration PostgreSQL.
+## Environnement de production
+### Prérequis
+- Node.js >= 18.x
+- PostgreSQL >= 12.x
+- Redis >= 6.x
+### Configuration de la base de données
 
 <p align="center">
   <a href="https://www.medusajs.com">
@@ -15,7 +51,7 @@ Back Medusa pour le site web de CheersLocation.
 </p>
 
 <h1 align="center">
-  Medusa
+About Medusa
 </h1>
 
 <h4 align="center">
@@ -41,7 +77,7 @@ Back Medusa pour le site web de CheersLocation.
 
 ## Compatibility
 
-This starter is compatible with versions >= 2 of `@medusajs/medusa`. 
+This starter is compatible with versions >= 2 of `@medusajs/medusa`.
 
 ## Getting Started
 
